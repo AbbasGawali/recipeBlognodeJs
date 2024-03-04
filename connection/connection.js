@@ -1,8 +1,10 @@
 
+import dotenv from "dotenv";
 import mongoose from "mongoose";
+dotenv.config();
+const DBURL = process.env.DBURL; 
 
-mongoose.connect(`mongodb://0.0.0.0:27017/recipeBlog`, {
-
+mongoose.connect(DBURL, {
 }).then(() => {
     console.log("connection Success")
 }).catch((err) => {
